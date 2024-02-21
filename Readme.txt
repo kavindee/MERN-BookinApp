@@ -114,8 +114,34 @@ Go back to code->backend
 	- npm i --save-dev @types/cookie-parser
 	- go to frontend-> src-> contexts-> AppContext.tsx
 10. Sign-in & Sing-out
-	- Go to backend-> src-> routes-> auth.ts
 	- Create a file "SignIn.tsx" in frontend-> src-> pages
-	
-
+	- Go to frontend-> src-> app.tsx
+	- Go to frontend-> src-> api-client.tsx
+	- Go to backend-> src-> routes-> auth.ts
+	- Go to frontend-> src-> api-client.tsx
+	- Go to frontend-> src-> components-> Header.tsx
+	- create "SignOutButton.tsx" in components folder
+11. Automated Tests
+	End to End test
+	* Setup test Database(previous database(mern-hotelbookingdb))
+		- Go to MongoDB web site & create a new project "e2e-test-db"
+		- Then go to "Database" & click "Build a Database"
+		- Change cluster0 to "e2e-test-db"
+		- give username as Admin & give password(kttyJho2aAO6THAd)
+		- Go to overview & click Connect
+		- then select drivers & copy the link
+		- Go vs code and create new file in backend folder ".env.e2e"
+		- Go to package.json in backend folder & type new script
+		- first we havee to install, npm i cross-env
+		- insert for the script "e2e": "cross-env DOTENV_CONFIG_PATH=.env.e2e nodemon"
+		- then go to the backend-> src-> index.ts
+	* Auth Tests
+		- create new folder in root "e2e-tests"
+		- npm init playwright@latest
+			-select TypeScript
+			- Where to put your end-to-end tests? · tests
+			- Add a GitHub Actions workflow? (y/N) · false
+		- Go to Extention and install "Playwright Test for VSCode"
+		- Go to e2e-tests-> tests-> & rename example.spec.ts file into auth.spec.ts
+		- 
 
